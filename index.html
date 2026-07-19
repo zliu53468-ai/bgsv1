@@ -2,22 +2,45 @@
 <html lang="zh-Hant-TW">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
 
   <!-- Meta Pixel Code -->
   <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
+    !function(f,b,e,v,n,t,s) {
+      if (f.fbq) return;
 
-  fbq('init', '2820274571669331');
-  fbq('track', 'PageView');
+      n = f.fbq = function() {
+        n.callMethod
+          ? n.callMethod.apply(n, arguments)
+          : n.queue.push(arguments);
+      };
+
+      if (!f._fbq) f._fbq = n;
+
+      n.push = n;
+      n.loaded = true;
+      n.version = "2.0";
+      n.queue = [];
+
+      t = b.createElement(e);
+      t.async = true;
+      t.src = v;
+
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    }(
+      window,
+      document,
+      "script",
+      "https://connect.facebook.net/en_US/fbevents.js"
+    );
+
+    fbq("init", "2820274571669331");
+    fbq("track", "PageView");
   </script>
 
   <noscript>
@@ -35,7 +58,10 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="即將前往 LINE" />
-  <meta property="og:description" content="點擊下方按鈕開啟 LINE 加入好友" />
+  <meta
+    property="og:description"
+    content="點擊下方按鈕開啟 LINE 加入好友"
+  />
 
   <style>
     :root {
@@ -55,7 +81,15 @@
       margin: 0;
       padding: 0;
       background: var(--line-green);
-      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "PingFang TC",
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        "Segoe UI",
+        Arial,
+        sans-serif;
     }
 
     body {
@@ -77,16 +111,16 @@
     .content {
       width: 100%;
       max-width: 348px;
-      text-align: center;
       margin: 0 auto;
+      text-align: center;
       transform: translateY(2px);
     }
 
     .bubble {
       display: block;
+      margin: 0 auto 35px;
       font-size: 72px;
       line-height: 1;
-      margin: 0 auto 35px;
       user-select: none;
       filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.14));
     }
@@ -101,11 +135,11 @@
 
     .subtitle {
       margin: 20px 0 37px;
+      color: rgba(255, 255, 255, 0.92);
       font-size: 18px;
       line-height: 1.42;
       font-weight: 700;
       letter-spacing: 0.02em;
-      color: rgba(255, 255, 255, 0.92);
       white-space: nowrap;
     }
 
@@ -154,11 +188,11 @@
     .loading-spinner {
       width: 24px;
       height: 24px;
+      flex-shrink: 0;
       border: 3px solid rgba(6, 199, 85, 0.25);
       border-top-color: var(--line-green);
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
-      flex-shrink: 0;
     }
 
     @keyframes spin {
@@ -175,8 +209,8 @@
 
     @media (max-width: 360px) {
       .page {
-        padding-left: 28px;
         padding-right: 28px;
+        padding-left: 28px;
       }
 
       .content {
@@ -184,8 +218,8 @@
       }
 
       .bubble {
-        font-size: 66px;
         margin-bottom: 30px;
+        font-size: 66px;
       }
 
       .title {
@@ -193,14 +227,14 @@
       }
 
       .subtitle {
-        font-size: 16px;
         margin: 18px 0 32px;
+        font-size: 16px;
       }
 
       .line-btn {
         height: 58px;
-        font-size: 22px;
         border-radius: 12px;
+        font-size: 22px;
       }
 
       .loading-spinner {
@@ -210,12 +244,17 @@
     }
   </style>
 </head>
+
 <body>
   <main class="page">
     <section class="content" aria-label="LINE 導流頁">
       <span class="bubble" aria-hidden="true">💬</span>
+
       <h1 class="title">即將前往 LINE</h1>
-      <p class="subtitle">點擊下方按鈕開啟 LINE 加入好友</p>
+
+      <p class="subtitle">
+        點擊下方按鈕開啟 LINE 加入好友
+      </p>
 
       <a
         id="lineButton"
@@ -224,9 +263,14 @@
         rel="noopener noreferrer"
         aria-label="開啟 LINE"
       >
-        <span class="btn-default-content">開啟 LINE</span>
+        <span class="btn-default-content">
+          開啟 LINE
+        </span>
 
-        <span class="btn-loading-content" aria-hidden="true">
+        <span
+          class="btn-loading-content"
+          aria-hidden="true"
+        >
           <span class="loading-spinner"></span>
           <span>載入中...</span>
         </span>
@@ -237,9 +281,10 @@
   <script>
     const lineButton = document.getElementById("lineButton");
     const lineUrl = lineButton.href;
+
     let isRedirecting = false;
 
-    lineButton.addEventListener("click", function (event) {
+    lineButton.addEventListener("click", function(event) {
       event.preventDefault();
 
       if (isRedirecting) {
@@ -248,18 +293,27 @@
 
       isRedirecting = true;
 
-      if (typeof fbq === "function") {
-        fbq("track", "Contact", {
-          content_name: "LINE 加入好友按鈕",
-          destination: "LINE"
-        });
-      }
-
       lineButton.classList.add("is-loading");
       lineButton.setAttribute("aria-busy", "true");
       lineButton.setAttribute("aria-label", "正在前往 LINE");
 
-      window.setTimeout(function () {
+      /*
+       * 使用者點擊 LINE 按鈕時，
+       * 傳送 Meta「潛在顧客 Lead」事件。
+       */
+      if (typeof fbq === "function") {
+        fbq("track", "Lead", {
+          content_name: "LINE 加入好友按鈕",
+          content_category: "LINE 導流",
+          destination: "LINE"
+        });
+      }
+
+      /*
+       * 延遲 1.2 秒，
+       * 讓 Meta Pixel 有時間傳送 Lead 事件。
+       */
+      window.setTimeout(function() {
         window.location.href = lineUrl;
       }, 1200);
     });
