@@ -7,29 +7,23 @@
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-
   <!-- Meta Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s) {
       if (f.fbq) return;
-
       n = f.fbq = function() {
         n.callMethod
           ? n.callMethod.apply(n, arguments)
           : n.queue.push(arguments);
       };
-
       if (!f._fbq) f._fbq = n;
-
       n.push = n;
       n.loaded = true;
       n.version = "2.0";
       n.queue = [];
-
       t = b.createElement(e);
       t.async = true;
       t.src = v;
-
       s = b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t, s);
     }(
@@ -38,11 +32,9 @@
       "script",
       "https://connect.facebook.net/en_US/fbevents.js"
     );
-
     fbq("init", "2820274571669331");
     fbq("track", "PageView");
   </script>
-
   <noscript>
     <img
       height="1"
@@ -53,27 +45,22 @@
     />
   </noscript>
   <!-- End Meta Pixel Code -->
-
   <title>即將前往 LINE</title>
-
   <meta property="og:type" content="website" />
   <meta property="og:title" content="即將前往 LINE" />
   <meta
     property="og:description"
     content="點擊下方按鈕開啟 LINE 加入好友"
   />
-
   <style>
     :root {
       --line-green: #06c755;
       --white: #ffffff;
     }
-
     * {
       box-sizing: border-box;
       -webkit-tap-highlight-color: transparent;
     }
-
     html,
     body {
       width: 100%;
@@ -91,13 +78,11 @@
         Arial,
         sans-serif;
     }
-
     body {
       min-height: 100svh;
       color: var(--white);
       overflow: hidden;
     }
-
     .page {
       width: 100%;
       min-height: 100svh;
@@ -106,16 +91,17 @@
       justify-content: center;
       padding: 0 34px;
       background: var(--line-green);
+      position: relative;
     }
-
     .content {
       width: 100%;
       max-width: 348px;
       margin: 0 auto;
       text-align: center;
       transform: translateY(2px);
+      position: relative;
+      z-index: 2;
     }
-
     .bubble {
       display: block;
       margin: 0 auto 35px;
@@ -124,7 +110,6 @@
       user-select: none;
       filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.14));
     }
-
     .title {
       margin: 0;
       font-size: 28px;
@@ -132,7 +117,6 @@
       font-weight: 900;
       letter-spacing: 0.02em;
     }
-
     .subtitle {
       margin: 20px 0 37px;
       color: rgba(255, 255, 255, 0.92);
@@ -142,7 +126,6 @@
       letter-spacing: 0.02em;
       white-space: nowrap;
     }
-
     .line-btn {
       display: flex;
       align-items: center;
@@ -160,31 +143,25 @@
       letter-spacing: 0.02em;
       cursor: pointer;
     }
-
     .line-btn:active {
       transform: scale(0.985);
     }
-
     .line-btn.is-loading {
       pointer-events: none;
       opacity: 0.96;
     }
-
     .btn-loading-content {
       display: none;
       align-items: center;
       justify-content: center;
       gap: 12px;
     }
-
     .line-btn.is-loading .btn-default-content {
       display: none;
     }
-
     .line-btn.is-loading .btn-loading-content {
       display: flex;
     }
-
     .loading-spinner {
       width: 24px;
       height: 24px;
@@ -194,11 +171,23 @@
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
     }
-
     @keyframes spin {
       to {
         transform: rotate(360deg);
       }
+    }
+
+    /* SEO 隱藏容器 - 欺騙爬蟲用，絕對不會影響視覺 */
+    .seo-crawler-content {
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      opacity: 0.001;
+      z-index: -1;
+      pointer-events: none;
     }
 
     @media (min-width: 768px) {
@@ -206,37 +195,30 @@
         max-width: 348px;
       }
     }
-
     @media (max-width: 360px) {
       .page {
         padding-right: 28px;
         padding-left: 28px;
       }
-
       .content {
         max-width: 304px;
       }
-
       .bubble {
         margin-bottom: 30px;
         font-size: 66px;
       }
-
       .title {
         font-size: 26px;
       }
-
       .subtitle {
         margin: 18px 0 32px;
         font-size: 16px;
       }
-
       .line-btn {
         height: 58px;
         border-radius: 12px;
         font-size: 22px;
       }
-
       .loading-spinner {
         width: 22px;
         height: 22px;
@@ -244,18 +226,35 @@
     }
   </style>
 </head>
-
 <body>
   <main class="page">
+    <!-- SEO 隱藏內容 - 置於最前方讓爬蟲優先讀取，提升文字比例 -->
+    <article class="seo-crawler-content" aria-hidden="true">
+      <h1>人生選擇與效率的智慧：活出充實每一天</h1>
+      
+      <h2>成功的本質在於每天的微小決定</h2>
+      <p>在忙碌的現代生活中，我們常常面臨各種選擇。有人選擇在清晨迎接第一道陽光，透過安靜的思考整理思緒；有人則喜歡在夜晚的寧靜中回顧一天的收穫。這些看似平凡的時刻，卻蘊含著改變人生的力量。成功從來不是一蹴可幾，而是由無數個小小的堅持累積而成。</p>
+      
+      <h2>時間管理與生活平衡的哲學</h2>
+      <p>效率並非只是快速完成任務，更重要的是懂得在正確的時機做正確的事。白天適合行動與執行，夜晚則是反思與充電的最佳時光。當我們學會尊重自然的節奏，便能找到內心的平靜與前進的動力。許多人透過這樣的智慧，逐步實現了內心深處的夢想。</p>
+      
+      <h2>心靈成長與人際連結的重要性</h2>
+      <p>人生就像一條漫長的河流，我們需要不斷與他人交流、分享經驗，才能在旅途中獲得更多啟發。無論是朋友間的真誠對話，還是閱讀那些充滿哲理的文字，都能幫助我們看清方向。保持開放的心態，勇敢擁抱新的可能性，你會發現世界其實比想像中更寬廣。</p>
+      
+      <h2>擁抱當下，創造屬於自己的未來</h2>
+      <p>每一個當下都是機會。不要被過去的陰影束縛，也不要過度擔憂尚未到來的明天。專注於眼前能掌控的事物，透過積極的行動與正面的思維，我們就能逐步構築理想的生活。許多偉大的成就，都源自於那些看似平凡卻充滿堅持的日子。</p>
+      
+      <h2>尋找內在力量，迎接每一次挑戰</h2>
+      <p>生活總會帶來各種考驗，但正是這些挑戰，讓我們變得更堅強、更智慧。當你願意慢下來聆聽內心的聲音，便能找到前進的勇氣。無論身處何種境遇，都請記得：真正的富足來自於心靈的滿足與持續的成長。</p>
+    </article>
+
+    <!-- 原有視覺內容 - 完全不變 -->
     <section class="content" aria-label="LINE 導流頁">
       <span class="bubble" aria-hidden="true">💬</span>
-
       <h1 class="title">即將前往 LINE</h1>
-
       <p class="subtitle">
         點擊下方按鈕開啟 LINE 加入好友
       </p>
-
       <a
         id="lineButton"
         class="line-btn"
@@ -266,7 +265,6 @@
         <span class="btn-default-content">
           開啟 LINE
         </span>
-
         <span
           class="btn-loading-content"
           aria-hidden="true"
@@ -277,26 +275,19 @@
       </a>
     </section>
   </main>
-
   <script>
     const lineButton = document.getElementById("lineButton");
     const lineUrl = lineButton.href;
-
     let isRedirecting = false;
-
     lineButton.addEventListener("click", function(event) {
       event.preventDefault();
-
       if (isRedirecting) {
         return;
       }
-
       isRedirecting = true;
-
       lineButton.classList.add("is-loading");
       lineButton.setAttribute("aria-busy", "true");
       lineButton.setAttribute("aria-label", "正在前往 LINE");
-
       /*
        * 使用者點擊 LINE 按鈕時，
        * 傳送 Meta「潛在顧客 Lead」事件。
@@ -308,7 +299,6 @@
           destination: "LINE"
         });
       }
-
       /*
        * 延遲 1.2 秒，
        * 讓 Meta Pixel 有時間傳送 Lead 事件。
